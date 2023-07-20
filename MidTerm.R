@@ -223,8 +223,8 @@ f.con <- matrix (c(2000,300,600,#cost per
                    1,0,0,#Television
                    0,1,0,#Radio
                    0,0,1,#Online
-                   0.5,-0.5,0.5,#radio limit
-                   -0.9,.1,.1
+                   -0.5,0.5,-0.5,#radio limit
+                   0.9,-.1,-.1
                    ),
 nrow=6,
 byrow=TRUE)
@@ -247,11 +247,11 @@ solveLP(cvec = f.obj,
 options(scipen = 999)
 matrix(prod.sol$objval)
 matrix(prod.sol$solution)
-matrix(prod.sol$duals)
-matrix(prod.sol$duals.from)
-matrix(prod.sol$duals.to)
-matrix(prod.sol$sens.coef.from)
-matrix(prod.sol$sens.coef.to)
+#matrix(prod.sol$duals)
+#matrix(prod.sol$duals.from)
+#matrix(prod.sol$duals.to)
+#matrix(prod.sol$sens.coef.from)
+#matrix(prod.sol$sens.coef.to)
 
 
 
@@ -347,8 +347,8 @@ options(scipen = 999)
 
 #Question 34
 f.obj <- c(0.5,0.7,0.45)
-f.con <- matrix (c(75,85,60,#Aroma
-                   85,89,74,#Taste
+f.con <- matrix (c(0,10,-15,#Aroma
+                   5,9,-6,#Taste
                    1,0,0,#Bean 1
                    0,1,0,#Bean 2
                    0,0,1,#Bean 3
@@ -357,7 +357,7 @@ f.con <- matrix (c(75,85,60,#Aroma
 nrow=6,
 byrow=TRUE)
 f.dir <- c(">=",">=","<=","<=","<=","=")
-f.rhs <- c(75,80,550,550,450,1000)
+f.rhs <- c(0,0,550,550,450,1000)
 # solving model
 prod.sol <- lp("min",
                f.obj,
@@ -375,11 +375,11 @@ solveLP(cvec = f.obj,
 options(scipen = 999)
 matrix(prod.sol$objval)
 matrix(prod.sol$solution)
-matrix(prod.sol$duals)
-matrix(prod.sol$duals.from)
-matrix(prod.sol$duals.to)
-matrix(prod.sol$sens.coef.from)
-matrix(prod.sol$sens.coef.to)
+#matrix(prod.sol$duals)
+#matrix(prod.sol$duals.from)
+#matrix(prod.sol$duals.to)
+#matrix(prod.sol$sens.coef.from)
+#matrix(prod.sol$sens.coef.to)
 
 
 
